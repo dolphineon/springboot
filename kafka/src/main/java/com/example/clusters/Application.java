@@ -40,6 +40,7 @@ public class Application implements CommandLineRunner {
     @KafkaListener(topics = "myTopic")
     public void listen(ConsumerRecord<?, ?> cr) throws Exception {
         logger.info(cr.toString());
+        logger.info("get all values");
         latch.countDown();
     }
 
